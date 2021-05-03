@@ -13,22 +13,21 @@
 	<div class="carousel-inner" role="listbox">
 		<div class="item  slidefirst ">
 			<div class="carousel-caption-alawal">
-				<img class="img-responsive animated fadeIn delay-1s" src="{% static 'imgs/alawalwhitelogo.png' %}">
-				<p class="animated fadeIn delay-2s">Qualified in Print books and e-learning technologies</p>
+
+				<p class="animated fadeIn delay-2s">Natural and naturally derived ingredients</p>
 			</div>
 		</div>
 		<div class="item  slide2 active">
 			<div class="carousel-caption-alawal">
-				<img class="img-responsive animated fadeIn delay-1s" src="{% static 'imgs/sliderIcon1.png' %}">
-				<p class="animated fadeIn delay-2s">We work with worldwide suppliers, manufacturers and publishers
+
+				<p class="animated fadeIn delay-2s">Best Cosmetics products of the highest quality
 				</p>
 			</div>
 		</div>
 		<div class="item  slide3">
 			<div class="carousel-caption-alawal">
-				<img class="img-responsive animated fadeIn delay-1s" src="{% static 'imgs/sliderIcon2.png' %}">
-				<p class="animated fadeIn delay-2s">online educational content, learning management systems and
-					interactive whiteboards</p>
+
+				<p class="animated fadeIn delay-2s">Let your skin feel the nature</p>
 			</div>
 		</div>
 	</div>
@@ -43,54 +42,12 @@
 	</a>
 </div>
 
-<section class="text-center homeAbout ">
-	<div class="container">
-		<h1 class="aboutTitle">ABOUT FIRST EDUCATION</h1>
-		<p class="aboutData">
-			First Education is qualified in Print books and e-learning technologies including but not limited to
-			online educational content.
-		</p>
-		<div class="row clientsRow text-center">
-			<div class="col-xs-6 col-md-3 educationSections american">
-				<p>AMRICAN curriculum</p>
-			</div>
-			<div class="col-xs-6 col-md-3 educationSections britsh">
-				<p>BRITSH curriculum</p>
-			</div>
-			<div class="col-xs-6 col-md-3 educationSections languageschools">
-				<p>LANGUAGE SCHOOLS</p>
-			</div>
-			<div class="col-xs-6 col-md-3 educationSections ibschools">
-				<p>IB SCHOOLS</p>
-			</div>
-		</div>
-		<a href="{% url 'Home:aboutus' %}"><button class="readmoreButton">READ MORE</button></a>
-	</div>
-</section>
 
-<section class="publishersHome text-center ">
-	<div class="container text-center">
-		<h1 class="publisheraTitle">OUR PUBLISHERS</h1>
-		<p class="publishersData">
-			We work with worldwide suppliers, manufacturers and publishers to purchase and ship your school
-			procurement all in one go.
-		</p>
-		<div class="owl-carousel owl-theme ">
 
-			{% for p in publisher %}
-
-			<div> <img class="img-responsive" src="{{ p.image_url }}"> </div>
-
-			{% endfor %}
-
-		</div>
-		<a href="{% url 'Home:publishers' %}"><button class="readmoreButton">EXPLORE OUR PUBLISHERS</button></a>
-	</div>
-</section>
 
 <section class="text-center homeAbout">
 	<div class="container">
-		<h1 class="aboutTitle">BOOKS FOR SALE</h1>
+		<h1 class="aboutTitle">OUR PRODUCTS</h1>
 		<p class="aboutData">
 			Al-AWAL Education is qualified in Print books and e-learning technologies including but not limited to
 			online educational content.
@@ -109,29 +66,100 @@
 				<p>AND MORE...</p>
 			</div>
 		</div>
-		<a href="{% url 'Home_stores:booksforsale' %}"><button class="readmoreButton">EXPLORE OUR BOOKS</button></a>
+		<a href="{% url 'Home_stores:booksforsale' %}"><button class="readmoreButton">EXPLORE OUR PRODUCTS</button></a>
 	</div>
 </section>
 
-<section class="text-center homeAbout specialNeedsBooksHome">
-	<div class="container">
-		<h1 class="aboutTitle">SPECIAL NEEDS EDUCATION </h1>
-		<p class="aboutData">
-			Special Education services are not only for students that have specific disabilities, but the also for
-			students with significantly high abilities, usually referred to as "gifted".
+
+
+<section class="publishersHome text-center ">
+	<div class="container text-center">
+		<h1 class="publisheraTitle">OUR PARTNERS</h1>
+		<p class="publishersData">
+			We work with worldwide suppliers, manufacturers and publishers to purchase and ship your school
+			procurement all in one go.
 		</p>
-		<div class="row clientsRow specialNeedsrow text-center">
-			<div class="col-xs-4 col-sm-4 col-md-3 educationSections autism">
-				<p>AUTISM</p>
-			</div>
-			<div class="col-xs-4 col-sm-4 col-md-3 educationSections anxiety">
-				<p>ANXIETY</p>
-			</div>
-			<div class="col-xs-4 col-sm-4 col-md-3 educationSections">
-				<p>AND MORE...</p>
-			</div>
+		<div class="owl-carousel owl-theme ">
+
+			{% for p in publisher %}
+
+			<div> <img class="img-responsive" src="{{ p.image_url }}" alt="{{ p.nameofsupplier }}"> </div>
+
+			{% endfor %}
+
 		</div>
-		<a href="{% url 'Home:specialeducation' %}"><button class="readmoreButton">READ MORE</button></a>
+		<a href="{% url 'Home:publishers' %}"><button class="readmoreButton">EXPLORE OUR PARTNERS</button></a>
 	</div>
 </section>
+
+
+<section class="text-center homeAbout ">
+	<div class="container">
+		<h1 class="aboutTitle">ABOUT FIRST</h1>
+		<p class="aboutData">
+			First Education is qualified in Print books and e-learning technologies including but not limited to
+			online educational content.
+		</p>
+		<div class="row clientsRow text-center">
+			<div class="col-xs-6 col-md-3 educationSections american">
+				<p >CUSTOMER OBSESSED</p>
+				<p class="text">Exceeding our customers'
+expectations always is at the
+core of everything we do by
+offering a superior customer
+experience</p>
+			</div>
+			<div class="col-xs-6 col-md-3 educationSections britsh">
+				<p>CONTINUOUS IMPROVEMENT</p>
+				<p class="text">We surprise and delight
+by never being satisfied
+with the status quo
+we want to be better
+tomorrow than we are today</p>
+			</div>
+			<div class="col-xs-6 col-md-3 educationSections languageschools">
+				<p>TO BE THE BEST</p>
+				<p class="text">We strive to be the best
+at what we do through
+accountability, focus,
+initiative and a
+winning attitudey</p>
+			</div>
+			<div class="col-xs-6 col-md-3 educationSections ibschools">
+				<p>THE GOLDEN RULE</p>
+				<p class="text">We treat people the way
+we want to be treated
+with honesty, integrity and
+fairness when in doubt the
+golden rule trumps all</p>
+			</div>
+		</div>
+		<a href="{% url 'Home:aboutus' %}"><button class="readmoreButton">READ MORE</button></a>
+	</div>
+</section>
+
+
+
+
+<!--<section class="text-center homeAbout specialNeedsBooksHome">-->
+<!--	<div class="container">-->
+<!--		<h1 class="aboutTitle">SPECIAL NEEDS EDUCATION </h1>-->
+<!--		<p class="aboutData">-->
+<!--			Special Education services are not only for students that have specific disabilities, but the also for-->
+<!--			students with significantly high abilities, usually referred to as "gifted".-->
+<!--		</p>-->
+<!--		<div class="row clientsRow specialNeedsrow text-center">-->
+<!--			<div class="col-xs-4 col-sm-4 col-md-3 educationSections autism">-->
+<!--				<p>AUTISM</p>-->
+<!--			</div>-->
+<!--			<div class="col-xs-4 col-sm-4 col-md-3 educationSections anxiety">-->
+<!--				<p>ANXIETY</p>-->
+<!--			</div>-->
+<!--			<div class="col-xs-4 col-sm-4 col-md-3 educationSections">-->
+<!--				<p>AND MORE...</p>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--		<a href="{% url 'Home:specialeducation' %}"><button class="readmoreButton">READ MORE</button></a>-->
+<!--	</div>-->
+<!--</section>-->
 {% endblock body %}

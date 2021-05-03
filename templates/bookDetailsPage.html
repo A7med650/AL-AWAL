@@ -8,7 +8,7 @@
 		<p class="pageHeadTitleMain col-md-3">{{ specific_category }}</p>
 	</div>
 	<div class="row bookDetails">
-		<div class="col-sm-4"> <img class="img-responsive" src="{{ single_book.image_url }}"> </div>
+		<div class="col-sm-4"> <img class="img-responsive" src="{{ single_book.image_url }}" alt="{{ single_book.name }}"> </div>
 		<div class="col-sm-8">
 			<p class="bookTitle">{{ single_book.name }}</p>
 			<p class="bookQuickOverview">QUICK OVERVIEW</p>
@@ -16,6 +16,7 @@
 			<p class="bookISBN">ISBN: <span>{{ single_book.code }}</span></p>
 			<p class="bookPriceOneBookPage">PRICE: <span>{{ single_book.price }} TL</span></p>
 		</div>
+		{% comment %}
 		{% if user.is_authenticated %}
 		<button class="addToCartButton" onclick="addtocart('{% url 'Home:addbook' single_book.id %}')">
 			<span class="btn-success">
@@ -45,6 +46,7 @@
 			</button>
 		</a>
 		{% endif %}
+		{% endcomment %}
 	</div>
 </section>
 
@@ -59,7 +61,7 @@
 				<a href="{% url 'Home_book:detail' specific_category.slug s.id %}">
 					<div class="bookCard">
 						<div class="bookImage">
-							<img class="img-responsive" src="{{ s.image_url }}" style="margin: auto">
+							<img class="img-responsive" src="{{ s.image_url }}" style="margin: auto" alt="{{ s.name }}">
 						</div>
 						<p class="bookName">{{ s.name }}</p>
 						<p class="bookCode">ISBN &nbsp;: <span>{{ s.code }}</span></p>
@@ -67,6 +69,7 @@
 					</div>
 				</a>
 			</div>
+			{% comment %}
 			{% if user.is_authenticated %}
 			<button class="addToCartButton" onclick="addtocart('{% url 'Home:addbook' s.id %}')">
 				<span class="btn-success">
@@ -96,6 +99,7 @@
 				</button>
 			</a>
 			{% endif %}
+			{% endcomment %}
 		</div>
 
 		{% endfor %}

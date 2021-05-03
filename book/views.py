@@ -27,7 +27,7 @@ def footer_and_category():
     return context
 
 
-@login_required(login_url='/sign-up-and-log-in/')
+# @login_required(login_url='/sign-up-and-log-in/')
 def checkout(request):
     """Define the Checkout display function."""
 

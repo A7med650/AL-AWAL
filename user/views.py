@@ -334,7 +334,7 @@ def decrementcart(request, id_):
     return HttpResponse(flag)
 
 
-@login_required(login_url='/sign-up-and-log-in/')
+# @login_required(login_url='/sign-up-and-log-in/')
 @csrf_exempt
 def add_to_cart(request, id_):
     """Define a function to add items to cart."""

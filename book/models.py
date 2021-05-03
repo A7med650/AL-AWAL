@@ -70,7 +70,7 @@ class Order(models.Model):
 
     totalprice = models.FloatField(null=True, blank=True)
     discount = models.FloatField(null=True, blank=True)
-    books = models.ManyToManyField(Book, blank=True)
+    Book= models.ManyToManyField(Book, blank=True)
     discountbookfororder = models.ForeignKey(
         DiscountForBook, blank=True, on_delete=models.CASCADE, null=True)
     user = models.ForeignKey(MyUser, on_delete=models.CASCADE, null=True)

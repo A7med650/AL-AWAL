@@ -21,7 +21,7 @@
 		<a href="{% url 'Home_book:detail' specific_category.slug b.slug_book %}">
 			<div class="bookCard">
 				<div class="bookImage">
-					<img class="img-responsive" src="{{ b.image_url }}" style="margin: auto">
+					<img class="img-responsive" src="{{ b.image_url }}" style="margin: auto" alt="{{ b.name }}">
 				</div>
 				<p class="bookName" id="bname">{{ b.name }}</p>
 				<p class="bookCode" id="bcode">ISBN &nbsp;: <span>{{ b.code }}</span></p>
@@ -29,6 +29,7 @@
 			</div>
 		</a>
 
+        {% comment %}
 		{% if user.is_authenticated %}
 		<button class="addToCartButton" onclick="addtocart('{% url 'Home:addbook' b.id %}')">
 			<span class="btn-success">
@@ -58,6 +59,7 @@
 			</button>
 		</a>
 		{% endif %}
+		{% endcomment %}
 
 	</div>
 
@@ -81,7 +83,7 @@
 		<a href="{% url 'Home_book:detail' specific_category.slug b.slug_book %}">
 			<div class="bookCard">
 				<div class="bookImage">
-					<img class="img-responsive" src="{{ b.image_url }}" style="margin: auto">
+					<img class="img-responsive" src="{{ b.image_url }}" style="margin: auto" alt="{{ b.name }}">
 				</div>
 				<p class="bookName">{{ b.name }}</p>
 				<p class="bookCode">ISBN &nbsp;: <span>{{ b.code }}</span></p>
@@ -89,6 +91,7 @@
 			</div>
 		</a>
 
+        {% comment %}
 		{% if user.is_authenticated %}
 		<button class="addToCartButton" onclick="addtocart('{% url 'Home:addbook' b.id %}')">
 			<span class="btn-success">
@@ -118,6 +121,7 @@
 			</button>
 		</a>
 		{% endif %}
+		{% endcomment %}
 
 	</div>
 
@@ -135,7 +139,7 @@
 		<a href="{% url 'Home_book:detail' specific_category.slug b.slug_book %}">
 			<div class="bookCard">
 				<div class="bookImage">
-					<img class="img-responsive" src="{{ b.image_url }}" style="margin: auto">
+					<img class="img-responsive" src="{{ b.image_url }}" style="margin: auto" alt="{{ b.name }}">
 				</div>
 				<p class="bookName">{{ b.name }}</p>
 				<p class="bookCode">ISBN &nbsp;: <span>{{ b.code }}</span></p>
@@ -143,6 +147,7 @@
 			</div>
 		</a>
 
+        {% comment %}
 		{% if user.is_authenticated %}
 		<button class="addToCartButton" onclick="addtocart('{% url 'Home:addbook' b.id %}')">
 			<span class="btn-success">
@@ -172,6 +177,7 @@
 			</button>
 		</a>
 		{% endif %}
+		{% endcomment %}
 
 	</div>
 

@@ -6,8 +6,8 @@ from django.contrib import admin
 from . import models
 
 
-admin.site.site_title = 'FIRST PUBLISHER'
-admin.site.site_header = 'FIRST PUBLISHER'
+admin.site.site_title = 'FIRST LTD'
+admin.site.site_header = 'FIRST LTD'
 
 
 @admin.register(models.Order)
