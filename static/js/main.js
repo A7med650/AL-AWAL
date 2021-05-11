@@ -247,3 +247,38 @@ $('.addToCartButton').on('click', function () {
   }, 800);
 
 });
+
+
+
+
+
+ function onChangeCallback(ctr){
+            console.log("The country was changed: " + ctr);
+            //$("#selectionSpan").text(ctr);
+
+
+    }
+
+
+
+
+
+        $(document).ready(function () {
+            $(".niceCountryInputSelector").each(function(i,e){
+                new NiceCountryInput(e).init();
+            });
+        });
+
+
+
+//document.getElementById("subTotalOrder").innerHTML = document.getElementById("cart-total").innerHTML;
+
+if (document.getElementById("subTotalOrder").innerHTML <= 200){
+    document.getElementById("shippingCost").innerHTML = 0;
+    document.getElementById("paymentRequired").innerHTML = parseFloat(document.getElementById("subTotalOrder").innerHTML) + parseFloat (document.getElementById("shippingCost").innerHTML);
+    } else if(document.getElementById("subTotalOrder").innerHTML > 200){
+        document.getElementById("shippingCost").innerHTML = parseFloat (document.getElementById("subTotalOrder").innerHTML) * 0.1;
+        document.getElementById("paymentRequired").innerHTML = parseFloat (document.getElementById("subTotalOrder").innerHTML) +
+            parseFloat (document.getElementById("shippingCost").innerHTML);
+              }
+

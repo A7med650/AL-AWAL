@@ -30,7 +30,8 @@ if os.path.isfile(dotenv_file):
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ['DEBUG']
+# DEBUG = os.environ['DEBUG']
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     'book',
     'footer',
@@ -134,13 +136,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = [
-#     BASE_DIR / 'static',
-# ]
-STATIC_ROOT = BASE_DIR/'static'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
+# STATIC_ROOT = BASE_DIR/'static'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
 
 USE_DJANGO_JQUERY = True
 
@@ -239,3 +242,13 @@ MESSAGE_TAGS = {
     messages.WARNING: 'alert-warning',
     messages.ERROR: 'alert-danger',
 }
+
+
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_SSL_REDIRECT = True
+SECURE_HSTS_SECONDS = 86400 # Equivalent to 1 day
+SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True

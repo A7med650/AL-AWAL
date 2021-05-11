@@ -25,11 +25,10 @@
 				</div>
 				<p class="bookName" id="bname">{{ b.name }}</p>
 				<p class="bookCode" id="bcode">ISBN &nbsp;: <span>{{ b.code }}</span></p>
-				<p class="bookPrice" id="bprice">PRICE &nbsp;:<span> {{ b.price }} TL</span></p>
+				<p class="bookPrice" id="bprice">PRICE &nbsp;:<span> {{ b.price }} $</span></p>
 			</div>
 		</a>
 
-        {% comment %}
 		{% if user.is_authenticated %}
 		<button class="addToCartButton" onclick="addtocart('{% url 'Home:addbook' b.id %}')">
 			<span class="btn-success">
@@ -59,7 +58,6 @@
 			</button>
 		</a>
 		{% endif %}
-		{% endcomment %}
 
 	</div>
 
@@ -87,11 +85,10 @@
 				</div>
 				<p class="bookName">{{ b.name }}</p>
 				<p class="bookCode">ISBN &nbsp;: <span>{{ b.code }}</span></p>
-				<p class="bookPrice">PRICE &nbsp;:<span> {{ b.price }} TL</span></p>
+				<p class="bookPrice">PRICE &nbsp;:<span> {{ b.price }} $</span></p>
 			</div>
 		</a>
 
-        {% comment %}
 		{% if user.is_authenticated %}
 		<button class="addToCartButton" onclick="addtocart('{% url 'Home:addbook' b.id %}')">
 			<span class="btn-success">
@@ -121,7 +118,6 @@
 			</button>
 		</a>
 		{% endif %}
-		{% endcomment %}
 
 	</div>
 
@@ -143,11 +139,10 @@
 				</div>
 				<p class="bookName">{{ b.name }}</p>
 				<p class="bookCode">ISBN &nbsp;: <span>{{ b.code }}</span></p>
-				<p class="bookPrice">PRICE &nbsp;:<span> {{ b.price }} TL</span></p>
+				<p class="bookPrice">PRICE &nbsp;:<span> {{ b.price }} $</span></p>
 			</div>
 		</a>
 
-        {% comment %}
 		{% if user.is_authenticated %}
 		<button class="addToCartButton" onclick="addtocart('{% url 'Home:addbook' b.id %}')">
 			<span class="btn-success">
@@ -177,7 +172,6 @@
 			</button>
 		</a>
 		{% endif %}
-		{% endcomment %}
 
 	</div>
 

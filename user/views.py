@@ -36,22 +36,27 @@ from book.models import Book
 from .valid import Check
 
 
+
+
 def footer_and_category():
     """define a function to get footer and categories."""
 
-    footer = MyInformation.objects.filter(id=1).first()
-    category = Category.objects.all()
-    book_list = []
-    for single_category in category:
-        if not Book.objects.filter(category__name=single_category.name).exists():
-            book_list.append(single_category.name)
-    category = Category.objects.exclude(name__in=book_list)
+    footer = MyInformation.objects.all()[0]
+
+    category = Book.objects.select_related(
+        'category').values_list('category__name', flat=True)
+    category = Category.objects.filter(name__in=category)
+
     context = {
         'footer': footer,
         'category': category,
     }
+
     return context
 
+def error_404_view(request, exception):
+    context = footer_and_category()
+    return render(request, '404.html', context)
 
 class EmailThread(threading.Thread):
     """Send e-mail faster"""
@@ -334,7 +339,7 @@ def decrementcart(request, id_):
     return HttpResponse(flag)
 
 
-# @login_required(login_url='/sign-up-and-log-in/')
+@login_required(login_url='/sign-up-and-log-in/')
 @csrf_exempt
 def add_to_cart(request, id_):
     """Define a function to add items to cart."""
@@ -446,3 +451,7 @@ def logout_view(request):
         del request.session["menu"]
     logout(request)
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+def payment(request):
+    context = footer_and_category()
+    return render(request, 'payment.html', context)

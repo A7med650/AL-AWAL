@@ -3710,6 +3710,7 @@ body{
     font-family: "SakkalMajalla";
     margin-top: 100px;
 
+
 }
 /*MAIN BODY*/
 
@@ -3850,7 +3851,7 @@ body{
     border: 0px;
     width: 30px;
 }
-.slidefirst{
+.slide1{
     background-image: url(../imgs/slider1.jpg);
     background-size: cover;
     background-position: center;
@@ -3863,7 +3864,7 @@ body{
 }
 
 
-.slide3{
+.slidethree{
     background-image: url(../imgs/slider3.jpg);
     background-size: cover;
     background-position: center;
@@ -3916,8 +3917,7 @@ body{
 .educationSections{
     height: 200px;
     background-color: black;
-    /*border: 10px solid white;*/
-
+    margin-bottom:30px;
     position: relative;
 }
 
@@ -3933,10 +3933,19 @@ body{
     text-transform: uppercase;
 }
 
-.educationSections P.text{
+
+
+.educationSections p.text{
 top:60%;
-font-size:15px;
- padding:5px 10px;
+font-size:18px;
+padding:5px;
+}
+
+
+.educationSections p.productTypeName{
+    top:50%;
+}
+
 }
 
 
@@ -3960,11 +3969,11 @@ font-size:15px;
 }
 
 .american{
-    background-color: #ce6a6b;
+    background-color:#ce6a6b;
     background-size: cover;
 }
 .britsh{
-    background-color: #4a919e;
+    background-color:#4a919e;
     background-size: cover;
 }
 .languageschools{
@@ -3972,7 +3981,7 @@ font-size:15px;
     background-size: cover;
 }
 .ibschools{
-   background-color: #bed3c3;
+    background-color:#bed3c3;
     background-size: cover;
 }
 /*ABOUT HOME*/
@@ -4000,6 +4009,9 @@ font-size:15px;
     margin: auto;
     padding-bottom: 50px;
     color: white;
+}
+.owl-stage-outer{
+    margin-bottom:30px;
 }
 
 /*PUBLISHERS HOME*/
@@ -4180,6 +4192,82 @@ a.contactsDetails:hover {
     padding-bottom: 0px;
     border-bottom: 0px;
 }
+
+
+
+.educationSections.firstAbout{
+    background-color:#192a5a;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    height: 100%;
+
+}
+.educationSections.secondAbout{
+    background-color:#a9b938;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    height: 100%;
+}
+.educationSections.thirdAbout{
+    background-color:#192a5a;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    height: 100%;
+}
+.educationSections.forthAbout{
+    background-color:#a9b938;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    height: 100%;
+}
+
+
+
+
+.educationSections.firstAbout p{
+    position:relative;
+
+    left:0;
+    transform:none;
+    font-size:20px;
+    text-align:left;
+    font-weight:200;
+    padding:20px;
+}
+.educationSections.secondAbout p{
+   position:relative;
+
+    left:0;
+    transform:none;
+    font-size:20px;
+    text-align:left;
+    font-weight:200;
+    padding:20px;
+}
+.educationSections.thirdAbout p{
+   position:relative;
+
+    left:0;
+    transform:none;
+    font-size:20px;
+    text-align:left;
+    font-weight:200;
+    padding:20px;
+}
+.educationSections.forthAbout p{
+   position:relative;
+
+    left:0;
+    transform:none;
+    font-size:20px;
+    text-align:left;
+    font-weight:200;
+    padding:20px;
+}
+
+
+
+
 .alawalMainSectors video{
    width: 100%;
     padding: 0px 10px;
@@ -4351,7 +4439,7 @@ a.contactsDetails:hover {
 .bookDetails button:hover{
 
     background-color: #fff;
-    color:  #5b0000;
+    color:  #fff;
 
 }
 .YouMayAlsoLike{
@@ -4386,95 +4474,112 @@ a.contactsDetails:hover {
     text-align: center;
 
 }
+
+.bookCard button{
+    text-align: center;
+    width: 100%;
+    background-color: #5b0000;
+    border: 0px;
+    color: #fff;
+    font-size: 18px;
+    padding: 5px 0px;
+}
+
+
+
 .addToCartButton{
-  text-align: center;
-  width: 100%;
-  background-color: #5b0000;
-  border: 0px;
-  color: #fff;
-  font-size: 18px;
-  padding: 5px 0px;
-  text-transform: uppercase;
-  overflow: hidden;
-position: relative;
+    text-align: center;
+    width: 100%;
+    background-color: #5b0000;
+    border: 0px;
+    color: #fff;
+    font-size: 18px;
+    padding: 5px 0px;
+    text-transform: uppercase;
+    overflow: hidden;
+  position: relative;
 }
 
 
 .addToCartButton {
 
-transition: background-color .2s ease-in-out;
+  transition: background-color .2s ease-in-out;
 }
 .addToCartButton span {
-position: relative;
-white-space: nowrap;
+  position: relative;
+  white-space: nowrap;
 }
 .btn-content {
-opacity: 1;
-transition: opacity .4s ease-in-out;
+  opacity: 1;
+  transition: opacity .4s ease-in-out;
 }
 .addToCartButton:focus {
-outline: none;
+  outline: none;
 }
 .addToCartButton:before {
-content: "";
-position: absolute;
-display: inline-block;
-background-color: #d4551c;
-width: 0;
-height: 100%;
-left: 0;
-top: 0;
-transition: width .25s ease-in-out;
-z-index: 0;
+  content: "";
+  position: absolute;
+  display: inline-block;
+  background-color: #d4551c;
+  width: 0;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: width .25s ease-in-out;
+  z-index: 0;
 }
 .addToCartButton:hover:before {
-width: 100%;
+  width: 100%;
 }
 .addToCartButton.state-change:before {
-width: 0;
+  width: 0;
 }
 .addToCartButton.state-change .btn-content {
-opacity: 0;
+  opacity: 0;
 }
 .addToCartButton.loading-state .btn-loading {
-opacity: 1;
+  opacity: 1;
 }
 .addToCartButton.success-state {
-background-color: #00B729;
+  background-color: #00B729;
 }
 .addToCartButton.success-state .btn-success {
-opacity: 1;
-transform: translateX(-50%) translateY(-50%);
+  opacity: 1;
+  transform: translateX(-50%) translateY(-50%);
 }
 .addToCartButton.error-state {
-background-color: #D93A40;
+  background-color: #D93A40;
 }
 .addToCartButton.error-state .btn-error {
-opacity: 1;
-transform: translateX(-50%) translateY(-50%);
+  opacity: 1;
+  transform: translateX(-50%) translateY(-50%);
 }
 .addToCartButton .btn-loading {
-position: absolute;
-left: 50%;
-margin-left: -11px;
-opacity: 0;
-transition: opacity .25s ease-in-out;
+  position: absolute;
+  left: 50%;
+  margin-left: -11px;
+  opacity: 0;
+  transition: opacity .25s ease-in-out;
 }
 .addToCartButton .btn-error {
-position: absolute;
-top: 50%;
-left: 50%;
-opacity: 0;
-transform: translateX(-100%) translateY(-50%);
-transition: opacity 200ms ease-in-out, transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translateX(-100%) translateY(-50%);
+  transition: opacity 200ms ease-in-out, transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 .addToCartButton .btn-success {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translateX(-50%) translateY(-300%);
-transition: opacity 200ms ease-in-out, transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-300%);
+  transition: opacity 200ms ease-in-out, transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
+
+
+
+
 .bookImage{
     height:190px;
     margin: auto;
@@ -5071,7 +5176,7 @@ font-weight: 600;
 }
 
 .form-control{
-    color: #fff;
+    color: #555;
 }
 
 
@@ -5299,8 +5404,8 @@ input[type=number]
 
 /* Apply clearfix in a few places */
 /* Apply dollar signs */
-.product .product-price:after, .product .product-line-price:after, .totals-value:after {
-  content: ' TL';
+.product .product-price:before, .product .product-line-price:before, .totals-value:before {
+  content: '$';
 }
 
 /* Body/Header stuff */
@@ -6001,5 +6106,159 @@ button:focus{
 
 /*RESPONSIVE*/
 
+.niceCountryInputMenu {
+    background: white !important;
+    color: black !important;
+    border: 1px solid #a8a8a8;
+    cursor: pointer;
+    font-size: 18px;
+     /*
+    font-family: Arial;
+    font-size: 12px;
+    */
+}
+.niceCountryInputMenuDefaultText {
+     margin-top: 5px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.niceCountryInputMenuDefaultText a:hover {
+    text-decoration: none;
+}
+.niceCountryInputMenu a {
+    color: black !important;
+}
+.niceCountryInputMenuDropdown {
+    /*border-left: 1px solid #a8a8a8;*/
+    height: 25px;
+    width: 21px;
+    float: right;
+    line-height: 25px;
+    text-align: center;
+    position: relative;
+    right: 0;
+    color: black;
+    top: 5px;
+}
+.niceCountryInputMenuDropdownContent {
+    border: 1px solid #a8a8a8;
+    border-top: 0;
+    max-height: 200px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-size: 18px;
+}
+.niceCountryInputMenuDropdownContent a {
+    height: 25px;
+    line-height: 25px;
+    display: block;
+    width: 100%;
+    color: black !important;
+    overflow: hidden;
+    text-decoration: none;
+    /*
+    font-family: Arial;
+    font-size: 12px;
+    */
+}
+.niceCountryInputMenuDropdownContent a:hover {
+    background-color: gray !important;
+    color: white !important;
+    text-decoration: none;
+}
+.niceCountryInputMenuFilter {
+    border: 1px solid #a8a8a8;
+    border-top: 0;
+    border-bottom: 0;
+}
+.niceCountryInputMenuFilter input {
+    width: 100%;
+    width: calc(100% - 10px);
+    margin: 5px;
+    padding: 5px;
+}
+.niceCountryInputMenuCountryFlag {
+/*    border: 1px solid #d3d3d3;*/
+    width: 18px;
+    height: 13px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.niceCountryInputMenuCountryNoFlag {
+    display: inline-block;
+    border: 1px solid black;
+    background: white;
+    color: black;
+    line-height: 15px;
+    text-align: center;
+    width: 22px;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 13px;
+}
+.cards{
+    padding-left: 0px;
+}
+.cards li{
+
+    list-style: none;
+}
+
+.cards li img{
+   width: 50px;
+      display: inline;
+}
+
+.payYourOrder .checkout{
+    float: none;
+}
+
+.editCart{
+     background-color: #fff;
+    padding: 5px;
+    color: #5b0000;;
+    text-decoration: none;
+    transition: 0.3s all;
+    border-radius: 5px;
+}
 
 
+
+.editCart:focus, .editCart:hover{
+    background: #fff;
+    color: #66bb66;
+    text-decoration: none;
+
+}
+.pull-right span{
+    font-size: 20px;
+}
+
+h6{
+    font-size: 20px;
+}
+b{
+    font-size: 18px;
+}
+.quantityOrderReview{
+    font-size: 16px;
+}
+
+
+  .panel-info>.formHead{
+                font-size: 20px;
+                font-weight: 600;
+                color: #fff;
+                background-color: #5b0000;
+                border-color: #5b0000;
+            }
+
+            .inputTitle{
+                font-size: 20px;
+            }
+
+            .panel-info{
+                border-color: #5b0000;
+            }

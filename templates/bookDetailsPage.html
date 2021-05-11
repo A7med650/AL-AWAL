@@ -14,9 +14,9 @@
 			<p class="bookQuickOverview">QUICK OVERVIEW</p>
 			<p class="bookDescription">{{ single_book.description }}</p>
 			<p class="bookISBN">ISBN: <span>{{ single_book.code }}</span></p>
-			<p class="bookPriceOneBookPage">PRICE: <span>{{ single_book.price }} TL</span></p>
-		</div>
-		{% comment %}
+			<p class="bookPriceOneBookPage">PRICE: <span>{{ single_book.price }} $</span></p>
+
+
 		{% if user.is_authenticated %}
 		<button class="addToCartButton" onclick="addtocart('{% url 'Home:addbook' single_book.id %}')">
 			<span class="btn-success">
@@ -46,7 +46,13 @@
 			</button>
 		</a>
 		{% endif %}
-		{% endcomment %}
+
+
+		</div>
+
+
+
+
 	</div>
 </section>
 
@@ -69,7 +75,6 @@
 					</div>
 				</a>
 			</div>
-			{% comment %}
 			{% if user.is_authenticated %}
 			<button class="addToCartButton" onclick="addtocart('{% url 'Home:addbook' s.id %}')">
 				<span class="btn-success">
@@ -99,7 +104,6 @@
 				</button>
 			</a>
 			{% endif %}
-			{% endcomment %}
 		</div>
 
 		{% endfor %}

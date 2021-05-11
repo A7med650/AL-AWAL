@@ -51,7 +51,9 @@
 				<div class="totals-value" id="cart-total">0</div>
 			</div>
 		</div>
-		<button class="checkout">Checkout <i class="fa fa-angle-right" aria-hidden="true"></i></button>
+		<a href="{% url 'Home:payment' %}">
+		    <button class="checkout" id="checkout_test">Checkout <i class="fa fa-angle-right" aria-hidden="true"></i></button>
+		</a>
 		<a href="{% url 'Home_stores:booksforsale' %}"><button class="continueShopping"><i class="fa fa-angle-left"
 					aria-hidden="true"></i>
 				Continue Shopping</button></a>
