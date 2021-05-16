@@ -355,7 +355,8 @@ def add_to_cart(request, id_):
             arr = request.session["menu"]
             return HttpResponse(flag)
 
-    books.append(book.serialize())
+    object_ser = MenuItem(id_)
+    books.append(object_ser.serialize())
     request.session["menu"] = books
 
     arr = request.session["menu"]
@@ -454,4 +455,12 @@ def logout_view(request):
 
 def payment(request):
     context = footer_and_category()
+    book_session = request.session.get('menu', [])
+    book_query = Book.objects.all()
+    total = 0
+    for book_session_one in book_session:
+        book_id = book_session_one['id']
+        book_price = book_query.get(id=book_id)
+        total += book_price.price*book_session_one['quantity']
+    context.update({'subtotal':total, })
     return render(request, 'payment.html', context)

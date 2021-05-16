@@ -25,7 +25,7 @@
                     <!--REVIEW ORDER-->
                     <div class="panel panel-info">
                         <div class="panel-heading formHead">
-                            Review Order <div class="pull-right"><small><a class="afix-1 editCart" href="#">Edit Cart</a></small></div>
+                            Review Order <div class="pull-right"><small><a class="afix-1 editCart" href="{% url 'Home_book:checkout' %}">Edit Cart</a></small></div>
                         </div>
                         <div class="panel-body">
 
@@ -78,7 +78,7 @@
                             <div class="form-group">
                                 <div class="col-xs-12">
                                     <strong class="inputTitle" class="inputTitle">Subtotal</strong>
-                                    <div class="pull-right"><span>$</span><span  id="subTotalOrder"></span></div>
+                                    <div class="pull-right"><span>$</span><span  id="subTotalOrder">{{ subtotal }}</span></div>
                                 </div>
                                 <div class="col-xs-12">
                                     <b>Shipping cost</b>

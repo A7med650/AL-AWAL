@@ -273,10 +273,10 @@ $('.addToCartButton').on('click', function () {
 
 //document.getElementById("subTotalOrder").innerHTML = document.getElementById("cart-total").innerHTML;
 
-if (document.getElementById("subTotalOrder").innerHTML <= 200){
+if (document.getElementById("subTotalOrder").innerHTML >= 200){
     document.getElementById("shippingCost").innerHTML = 0;
     document.getElementById("paymentRequired").innerHTML = parseFloat(document.getElementById("subTotalOrder").innerHTML) + parseFloat (document.getElementById("shippingCost").innerHTML);
-    } else if(document.getElementById("subTotalOrder").innerHTML > 200){
+    } else if(document.getElementById("subTotalOrder").innerHTML < 200){
         document.getElementById("shippingCost").innerHTML = parseFloat (document.getElementById("subTotalOrder").innerHTML) * 0.1;
         document.getElementById("paymentRequired").innerHTML = parseFloat (document.getElementById("subTotalOrder").innerHTML) +
             parseFloat (document.getElementById("shippingCost").innerHTML);
