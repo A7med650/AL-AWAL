@@ -3,22 +3,22 @@ Configure the model for both Order, DiscountForBook, and Book.
 """
 
 from django.db import models
-from django.utils.text import slugify
-from django.utils.http import urlsafe_base64_encode
 from django.utils.encoding import force_bytes
+from django.utils.http import urlsafe_base64_encode
+from django.utils.text import slugify
 from smart_selects.db_fields import ChainedForeignKey
 
-from store.models import Category
-from store.models import Subcategory
+from store.models import Category, Subcategory
 from user.models import MyUser
 
 
 def rename_image(instance, filename):
     """this function rename image before saving."""
 
-    extension = filename.split('.')[-1]
+    extension = filename.split(".")[-1]
     image_name = "book-images/{}.{}".format(
-        instance.name+'-'+str(instance.id), extension)
+        instance.name + "-" + str(instance.id), extension
+    )
     return image_name
 
 
@@ -32,14 +32,33 @@ class Book(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
     description = models.TextField(null=True, max_length=400)
     subcategory = ChainedForeignKey(
-        Subcategory, on_delete=models.CASCADE, blank=True, null=True,
-        chained_field="category", chained_model_field="category")
+        Subcategory,
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+        chained_field="category",
+        chained_model_field="category",
+    )
     slug_book = models.SlugField(blank=True, null=True)
 
-    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
-        self.slug_book = slugify(self.name) + "-" + \
-            str(urlsafe_base64_encode(force_bytes(self.pk)))
-        super().save(force_insert=False, force_update=False, using=None, update_fields=None)
+    def save(
+        self,
+        force_insert=False,
+        force_update=False,
+        using=None,
+        update_fields=None,
+    ):
+        self.slug_book = (
+            slugify(self.name)
+            + "-"
+            + str(urlsafe_base64_encode(force_bytes(self.pk)))
+        )
+        super().save(
+            force_insert=False,
+            force_update=False,
+            using=None,
+            update_fields=None,
+        )
 
     def __str__(self):
         return str(self.name)
@@ -50,7 +69,7 @@ class Book(models.Model):
 
         url = self.image.url
         if url is None:
-            url = ''
+            url = ""
         return url
 
 
@@ -59,7 +78,8 @@ class DiscountForBook(models.Model):
 
     discountrate = models.FloatField(null=True, blank=True)
     discountforbook = models.ForeignKey(
-        Book, on_delete=models.CASCADE, blank=True, null=True)
+        Book, on_delete=models.CASCADE, blank=True, null=True
+    )
 
     def __str__(self):
         return str(self.discountforbook.name)
@@ -70,9 +90,10 @@ class Order(models.Model):
 
     totalprice = models.FloatField(null=True, blank=True)
     discount = models.FloatField(null=True, blank=True)
-    Book= models.ManyToManyField(Book, blank=True)
+    Book = models.ManyToManyField(Book, blank=True)
     discountbookfororder = models.ForeignKey(
-        DiscountForBook, blank=True, on_delete=models.CASCADE, null=True)
+        DiscountForBook, blank=True, on_delete=models.CASCADE, null=True
+    )
     user = models.ForeignKey(MyUser, on_delete=models.CASCADE, null=True)
 
     def __str__(self):

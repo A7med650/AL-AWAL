@@ -3,6 +3,7 @@ Configure the administrator Category and Subcategory.
 """
 
 from django.contrib import admin
+
 from . import models
 
 
@@ -10,7 +11,7 @@ from . import models
 class Admin(admin.ModelAdmin):
     """display Model of Category with some modifications to its functionality."""
 
-    readonly_fields = ('slug',)
+    readonly_fields = ("slug",)
 
 
 admin.site.register(models.Subcategory)

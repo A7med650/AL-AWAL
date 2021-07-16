@@ -8,9 +8,10 @@ from django.db import models
 def rename_image(instance, filename):
     """this function rename image before saving."""
 
-    extension = filename.split('.')[-1]
+    extension = filename.split(".")[-1]
     image_name = "publisher-images/{}.{}".format(
-        instance.nameofsupplier+'-'+str(instance.id), extension)
+        instance.nameofsupplier + "-" + str(instance.id), extension
+    )
     return image_name
 
 
@@ -23,7 +24,7 @@ class Publishers(models.Model):
     websitelink = models.URLField(null=True, blank=True)
 
     class Meta:
-        verbose_name_plural = 'Publishers'
+        verbose_name_plural = "Publishers"
 
     def __str__(self):
         return str(self.nameofsupplier)
@@ -34,5 +35,5 @@ class Publishers(models.Model):
 
         url = self.logo.url
         if url is None:
-            url = ''
+            url = ""
         return url

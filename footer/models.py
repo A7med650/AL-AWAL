@@ -17,7 +17,7 @@ class MyInformation(models.Model):
     website_link = models.URLField(null=True, blank=True)
 
     class Meta:
-        verbose_name_plural = 'company contacts'
+        verbose_name_plural = "company contacts"
 
     def __str__(self):
-        return 'company contacts'
+        return "company contacts"

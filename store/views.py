@@ -4,9 +4,9 @@ Define views and constraints for each view.
 
 from django.shortcuts import render
 
+from book.models import Book
 from footer.models import MyInformation
 from store.models import Category
-from book.models import Book
 
 
 def footer_and_category():
@@ -16,12 +16,14 @@ def footer_and_category():
     category = Category.objects.all()
     book_list = []
     for single_category in category:
-        if not Book.objects.filter(category__name=single_category.name).exists():
+        if not Book.objects.filter(
+            category__name=single_category.name
+        ).exists():
             book_list.append(single_category.name)
     category = Category.objects.exclude(name__in=book_list)
     context = {
-        'footer': footer,
-        'category': category,
+        "footer": footer,
+        "category": category,
     }
     return context
 
@@ -31,7 +33,7 @@ def booksforsale(request):
 
     context = footer_and_category()
 
-    return render(request, 'booksforsale.html', context)
+    return render(request, "booksforsale.html", context)
 
 
 def booksforsale_subcategory(request, slug):
@@ -53,11 +55,16 @@ def booksforsale_subcategory(request, slug):
     subcategory_list = list(subcategory_list)
 
     subcategory = specific_category.subcategory.filter(
-        name__in=subcategory_list)
+        name__in=subcategory_list
+    )
 
     context = footer_and_category()
-    context.update({'specific_category': specific_category,
-                    'subcategory': subcategory,
-                    'book': book, })
+    context.update(
+        {
+            "specific_category": specific_category,
+            "subcategory": subcategory,
+            "book": book,
+        }
+    )
 
-    return render(request, 'onecategorybookswithcategories.html', context)
+    return render(request, "onecategorybookswithcategories.html", context)

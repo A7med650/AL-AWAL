@@ -3,9 +3,9 @@ Configure the model for both Subcategory, and Category.
 """
 
 from django.db import models
-from django.utils.text import slugify
-from django.utils.http import urlsafe_base64_encode
 from django.utils.encoding import force_bytes
+from django.utils.http import urlsafe_base64_encode
+from django.utils.text import slugify
 
 
 class Subcategory(models.Model):
@@ -25,12 +25,26 @@ class Category(models.Model):
     slug = models.SlugField(null=True, blank=True)
 
     class Meta:
-        verbose_name_plural = 'Categories'
+        verbose_name_plural = "Categories"
 
-    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
-        self.slug = slugify(self.name) + "-" + \
-            str(urlsafe_base64_encode(force_bytes(self.pk)))
-        super().save(force_insert=False, force_update=False, using=None, update_fields=None)
+    def save(
+        self,
+        force_insert=False,
+        force_update=False,
+        using=None,
+        update_fields=None,
+    ):
+        self.slug = (
+            slugify(self.name)
+            + "-"
+            + str(urlsafe_base64_encode(force_bytes(self.pk)))
+        )
+        super().save(
+            force_insert=False,
+            force_update=False,
+            using=None,
+            update_fields=None,
+        )
 
     def __str__(self):
         return str(self.name)
