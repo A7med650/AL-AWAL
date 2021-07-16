@@ -5,6 +5,11 @@ Configure the model MyInformation.
 from django.db import models
 
 
+class MyInformationManager(models.Manager):
+    def first_row(self):
+        return self.filter(id=1).first()
+
+
 class MyInformation(models.Model):
     """Model definition for MyInformation."""
 
@@ -15,6 +20,7 @@ class MyInformation(models.Model):
     facebook_link = models.URLField(null=True, blank=True)
     instgram_link = models.URLField(null=True, blank=True)
     website_link = models.URLField(null=True, blank=True)
+    objects = MyInformationManager()
 
     class Meta:
         verbose_name_plural = "company contacts"

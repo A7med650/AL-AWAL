@@ -12,7 +12,7 @@ from store.models import Category
 def footer_and_category():
     """define a function to get footer and categories."""
 
-    footer = MyInformation.objects.filter(id=1).first()
+    footer = MyInformation.objects.first_row()
     category = Category.objects.all()
     book_list = []
     for single_category in category:

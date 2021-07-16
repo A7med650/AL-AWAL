@@ -29,7 +29,7 @@ from .valid import Check
 def footer_and_category():
     """define a function to get footer and categories."""
 
-    footer = MyInformation.objects.all()[0]
+    footer = MyInformation.objects.first_row()
 
     category = Book.objects.select_related("category").values_list(
         "category__name", flat=True
