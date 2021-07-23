@@ -8,7 +8,8 @@
 		<p class="pageHeadTitleMain col-md-3">{{ specific_category }}</p>
 	</div>
 	<div class="row bookDetails">
-		<div class="col-sm-4"> <img class="img-responsive" src="{{ single_book.image_url }}" alt="{{ single_book.name }}"> </div>
+		<div class="col-sm-4"> <img class="img-responsive" src="{{ single_book.image_url }}" alt="{{ single_book.name }}">
+		</div>
 		<div class="col-sm-8">
 			<p class="bookTitle">{{ single_book.name }}</p>
 			<p class="bookQuickOverview">QUICK OVERVIEW</p>
@@ -17,21 +18,7 @@
 			<p class="bookPriceOneBookPage">PRICE: <span>{{ single_book.price }} $</span></p>
 
 
-		{% if user.is_authenticated %}
-		<button class="addToCartButton" onclick="addtocart('{% url 'Home:addbook' single_book.id %}')">
-			<span class="btn-success">
-				<i class="fa fa-check"></i>
-				Added to cart
-			</span>
-			<span class="btn-content">Add to Cart
-				<i class="fa fa-shopping-cart" aria-hidden="true"></i>
-			</span>
-			<span class="btn-loading">
-				<i class="fa fa-spinner fa-pulse"></i>
-			</span>
-		</button>
-		{% else %}
-		<a href="{% url 'Home:addbook' single_book.id %}">
+			{% if user.is_authenticated %}
 			<button class="addToCartButton" onclick="addtocart('{% url 'Home:addbook' single_book.id %}')">
 				<span class="btn-success">
 					<i class="fa fa-check"></i>
@@ -44,8 +31,22 @@
 					<i class="fa fa-spinner fa-pulse"></i>
 				</span>
 			</button>
-		</a>
-		{% endif %}
+			{% else %}
+			<a href="{% url 'Home:addbook' single_book.id %}">
+				<button class="addToCartButton" onclick="addtocart('{% url 'Home:addbook' single_book.id %}')">
+					<span class="btn-success">
+						<i class="fa fa-check"></i>
+						Added to cart
+					</span>
+					<span class="btn-content">Add to Cart
+						<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+					</span>
+					<span class="btn-loading">
+						<i class="fa fa-spinner fa-pulse"></i>
+					</span>
+				</button>
+			</a>
+			{% endif %}
 
 
 		</div>
@@ -64,7 +65,7 @@
 
 		<div>
 			<div class=" outterSpaceBookCard">
-				<a href="{% url 'Home_book:detail' specific_category.slug s.id %}">
+				<a href="{% url 'Home_book:detail' specific_category.slug s.slug_book %}">
 					<div class="bookCard">
 						<div class="bookImage">
 							<img class="img-responsive" src="{{ s.image_url }}" style="margin: auto" alt="{{ s.name }}">
